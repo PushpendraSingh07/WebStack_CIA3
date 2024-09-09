@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Lovers - About Us, Signup & Random Cats</title>
+    <style>at
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #007bff;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        /* About Us Hero Section */
+        .hero {
+            background-color: #e9ecef;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Cat Image Fetch Section */
+        .random-cat {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #catImage {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .fetch-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .fetch-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Signup Form */
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Media query for responsiveness */
+        /* Base styles for mobile devices */
+.cat-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cat-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 10px;
+}
+
+/* Media query for tablets and above */
+@media (min-width: 768px) {
+  .cat-image {
+    width: 45%;
+  }
+}
+
+/* Media query for desktops */
+@media (min-width: 1024px) {
+  .cat-image {
+    width: 30%;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        Cat Lovers Hub
+    </div>
+
+    <div class="container">
+
+        <!-- About Us Hero Section -->
+        <section class="hero">
+            <h1>About Us</h1>
+            <p>Welcome to Cat Lovers Hub! We are passionate about cats and everything related to them. Our mission is to bring together cat lovers from all over the world. Explore, learn, and share your love for cats with our community!</p>
+        </section>
+
+        <!-- Random Cat Image Fetch Section (Part A) -->
+        <section class="random-cat">
+            <h2>Random Cat Images</h2>
+            <button class="fetch-button" id="fetchCatBtn" onclick="fetchRandomCat()">Fetch Random Cat</button>
+            <img id="catImage" src="https://cdn2.thecatapi.com/images/ozEvzdVM-.jpg" alt="Random Cat Image" catImageElement.style.display = 'block';>
+        </section>
+
+        
+        <!-- Signup Form Section (Part B) -->
+        <section class="signup">
+            <form id="signupForm">
+                <h2>Cat Lovers Signup</h2>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <label>
+                    <input type="checkbox" id="catLover" required> I'm a cat lover
+                </label>
+
+                <button type="submit">Sign Up</button>
+
+                <div class="form-footer">
+                    Already a member? <a href="#">Login here</a>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // Fetch a random cat image from The Cat API (Part A)
+        async function fetchRandomCat() {
+    try {
+        const response = await fetch('https://api.thecatapi.com/v1/images/search',{
+            headers: { 'x-api-key': 'https://cdn2.thecatapi.com/images/9ud.jpg'
+ }
+        });
+        const data = await response.json();
+        const catImageUrl = data[0].url;
+        const catImageElement = document.getElementById('catImage');
+        catImageElement.src = catImageUrl;
+        catImageElement.style.display = 'block'; // Ensure the image is shown
+    } catch (error) {
+        console.error('Error fetching the cat image:', error);
+    }
+}
+
+
+        // Attach event listener to the button
+        const fetchCatBtn = document.getElementById('fetchCatBtn');
+        fetchCatBtn.addEventListener('click', fetchRandomCat);
+        // Simple validation for signup form (Part B)
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const catLover = document.getElementById('catLover').checked;
+
+            if (!name || !email || !password || !catLover) {
+                alert("Please fill out all fields and confirm you're a cat lover!");
+                return;
+            }
+            alert("Sign up successful!");
+        });
+    </script>
+
+</body>
+</html>

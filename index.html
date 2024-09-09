@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Breeds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .cat-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .cat-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .cat-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .cat-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cat Breeds</h1>
+    <div class="cat-container" id="catContainer"></div>
+
+    <script>
+        // Function to fetch and display cat data
+        async function displayCats() {
+            try {
+                // Fetch the JSON data from the file
+                const response = await fetch('cats.json');
+                const cats = await response.json();
+
+                // Get the container where we want to display the data
+                const catContainer = document.getElementById('catContainer');
+
+                // Loop through each cat and create a card
+                cats.forEach(cat => {
+                    // Create a div for each cat
+                    const catCard = document.createElement('div');
+                    catCard.className = 'cat-card';
+
+                    // Add cat image, name, and description
+                    catCard.innerHTML = `
+                        <img src="${cat.url}" alt="${cat.name}">
+                        <h2>${cat.name}</h2>
+                        <p><strong>Temperament:</strong> ${cat.temperament}</p>
+                        <p><strong>Origin:</strong> ${cat.origin}</p>
+                        <p><strong>Description:</strong> ${cat.description}</p>
+                        <p><strong>Life Span:</strong> ${cat.life_span} years</p>
+                    `;
+
+                    // Append the card to the container
+                    catContainer.appendChild(catCard);
+                });
+            } catch (error) {
+                console.error('Error fetching cat data:', error);
+            }
+        }
+
+        // Call the function to display cats when the page loads
+        window.onload = displayCats;
+    </script>
+</body>
+</html>

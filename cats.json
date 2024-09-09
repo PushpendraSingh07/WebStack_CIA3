@@ -1,0 +1,57 @@
+[
+    {
+      "id": "aege",
+      "name": "Aegean",
+      "temperament": "Affectionate, Social, Intelligent, Playful, Active",
+      "origin": "Greece",
+      "description": "Native to the Greek islands known as the Cyclades in the Aegean Sea, these are natural cats, meaning they developed without humans getting involved in their breeding. They are generally friendly toward people and can be excellent cats for families with children.",
+      "life_span": "9-12",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Aegean_Island_Cat.jpg/330px-Aegean_Island_Cat.jpg"
+    },
+    {
+      "id": "abys",
+      "name": "Abyssinian",
+      "temperament": "Active, Energetic, Independent, Intelligent, Gentle",
+      "origin": "Egypt",
+      "description": "The Abyssinian is one of the oldest known cat breeds, known for its regal appearance and energetic personality. They are very social and require lots of interaction.",
+      "life_span": "14-15",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gustav_chocolate.jpg/330px-Gustav_chocolate.jpg"
+    },
+    {
+      "id": "beng",
+      "name": "Bengal",
+      "temperament": "Alert, Agile, Energetic, Demanding, Intelligent",
+      "origin": "United States",
+      "description": "Bengal cats have a wild appearance with large spots and rosettes reminiscent of leopards, but they are domestic cats. They are known for being playful, active, and social.",
+      "life_span": "12-16",
+      "url": "https://cats.com/wp-content/uploads/2020/10/Bengal-cat-compressed-1-768x420.jpg"
+    },
+    {
+      "id": "siam",
+      "name": "Siamese",
+      "temperament": "Active, Agile, Clever, Sociable, Loving",
+      "origin": "Thailand",
+      "description": "The Siamese cat is one of the first distinctly recognized breeds of Asian cat. They are very vocal and love to interact with their owners, known for their slim, elegant body and almond-shaped blue eyes.",
+      "life_span": "10-12",
+      "url": "https://cats.com/wp-content/uploads/2020/10/Siamese-Cat-compressed-1-768x420.jpg"
+    },
+    {
+      "id": "mcoo",
+      "name": "Maine Coon",
+      "temperament": "Gentle, Playful, Intelligent, Friendly",
+      "origin": "United States",
+      "description": "Maine Coons are one of the largest domesticated cat breeds. They are known for their friendly and playful nature, as well as their long, thick fur that makes them look even larger.",
+      "life_span": "12-15",
+      "url": "https://cats.com/wp-content/uploads/2020/10/Portrait-of-Maine-Shag-Cat-768x512.jpg"
+    },
+    {
+      "id": "sphy",
+      "name": "Sphynx",
+      "temperament": "Affectionate, Energetic, Playful, Intelligent, Social",
+      "origin": "Canada",
+      "description": "The Sphynx cat is known for its hairless appearance and friendly personality. They are very affectionate and require a lot of attention, making them ideal for people who spend a lot of time at home.",
+      "life_span": "8-14",
+      "url": "https://th.bing.com/th?id=ODL.d6dd6638dae5b266f0e3798981e6efde&w=141&h=300&c=10&rs=1&qlt=99&r=0&o=6&dpr=1.3&pid=13.1"
+    }
+  ]
+  
